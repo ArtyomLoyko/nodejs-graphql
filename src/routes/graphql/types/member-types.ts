@@ -11,7 +11,7 @@ export const MemberTypeId = new GraphQLEnumType({
 export const MemberType = new GraphQLObjectType({
   name: 'MemberType',
   fields: {
-    id: {type:MemberTypeId},
+    id: { type: MemberTypeId },
     discount: {
       type: GraphQLFloat
     },

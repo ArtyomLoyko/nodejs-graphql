@@ -1,7 +1,6 @@
-import { GraphQLNonNull, getNullableType } from 'graphql';
+import { GraphQLNonNull } from 'graphql';
 import { PrismaClient } from '@prisma/client';
 import { GraphQLList, GraphQLObjectType } from 'graphql';
-import { httpErrors } from '@fastify/sensible';
 import { MemberType, MemberTypeId } from '../types/member-types.js';
 import { PostType } from '../types/posts.js';
 import { ProfileType } from '../types/profiles.js';
