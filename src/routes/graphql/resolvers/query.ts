@@ -36,54 +36,46 @@ export const rootQuery = new GraphQLObjectType({
       }
     },
     memberType: {
-      type: getNullableType(MemberType),
+      type: MemberType,
       args: { id: { type: new GraphQLNonNull(MemberTypeId) } },
       resolve: async (_, { id }, prisma: PrismaClient) => {
         const memberType = await prisma.memberType.findUnique({
           where: { id },
         });
-        if (memberType === null) {
-          throw httpErrors.notFound();
-        }
+
         return memberType;
       }
     },
     post: {
-      type: getNullableType(PostType),
+      type: PostType,
       args: { id: { type: new GraphQLNonNull(UUIDType) } },
       resolve: async (_, { id }, prisma: PrismaClient) => {
         const post = await prisma.post.findUnique({
           where: { id },
         });
-        if (post === null) {
-          throw httpErrors.notFound();
-        }
+
         return post;
       }
     },
     profile: {
-      type: getNullableType(ProfileType),
+      type: ProfileType,
       args: { id: { type: new GraphQLNonNull(UUIDType) } },
       resolve: async (_, { id }, prisma: PrismaClient) => {
         const profile = await prisma.profile.findUnique({
           where: { id },
         });
-        if (profile === null) {
-          throw httpErrors.notFound();
-        }
+
         return profile;
       }
     },
     user: {
-      type: getNullableType(UserType),
+      type: UserType,
       args: { id: { type: new GraphQLNonNull(UUIDType) } },
       resolve: async (_, { id }, prisma: PrismaClient) => {
         const user = await prisma.user.findUnique({
           where: { id },
         });
-        if (user === null) {
-          throw httpErrors.notFound();
-        }
+
         return user;
       }
     },
